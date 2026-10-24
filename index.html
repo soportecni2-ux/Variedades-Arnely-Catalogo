@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b8f3a">
+<title>Variedades Arnely | Catálogo</title>
+<style>
+:root{--green:#0b8f3a;--green2:#08752f;--ink:#17211b;--muted:#66736a;--line:#e5ebe6;--bg:#f5f8f5;--white:#fff;--gold:#ffc857}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+button,input,select,textarea{font:inherit}button{cursor:pointer;border:0}.wrap{max-width:1180px;margin:auto;padding:0 18px}
+.topbar{background:#073f20;color:#fff;font-size:12px;padding:8px 0}.topinner{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}.head{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:11px;min-width:0}.logo{width:45px;height:45px;border-radius:14px;background:var(--green);display:grid;place-items:center;color:white;font-size:24px;font-weight:900;box-shadow:0 5px 14px #0b8f3a30}.brandname{font-weight:900;letter-spacing:.4px;font-size:17px}.tagline{font-size:11px;color:var(--muted);margin-top:2px}
+.headactions{display:flex;gap:8px}.btn{border-radius:12px;padding:11px 14px;font-weight:750;font-size:13px;display:inline-flex;align-items:center;justify-content:center;gap:7px}.btn-green{background:var(--green);color:white}.btn-green:hover{background:var(--green2)}.btn-light{background:#eef6f0;color:#14552c}.btn-outline{background:white;border:1px solid var(--line);color:var(--ink)}
+.hero{margin:24px auto 20px;background:linear-gradient(115deg,#073f20,#0b8f3a 70%,#35b765);border-radius:24px;color:white;overflow:hidden;position:relative;padding:30px;display:grid;grid-template-columns:1.25fr .75fr;gap:18px;align-items:center;min-height:230px}
+.hero:after{content:"";position:absolute;width:280px;height:280px;border:36px solid #ffffff13;border-radius:50%;right:-45px;top:-70px}.eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:1.7px;font-weight:800;color:#d8f8df}.hero h1{font-size:clamp(27px,4vw,43px);line-height:1.05;margin:9px 0 12px;max-width:600px}.hero p{margin:0;color:#e2f7e7;max-width:510px;line-height:1.55;font-size:14px}.heroart{z-index:1;display:flex;align-items:center;justify-content:center;min-height:140px}.heroicon{font-size:100px;filter:drop-shadow(0 12px 14px #003b1e50);transform:rotate(-8deg)}
+.searchrow{display:flex;gap:10px;margin:20px 0 16px}.searchbox{background:#fff;border:1px solid var(--line);border-radius:14px;display:flex;align-items:center;gap:10px;padding:0 14px;flex:1;min-width:0}.searchbox input{border:0;outline:0;width:100%;padding:14px 0;background:transparent}.categorybar{display:flex;gap:8px;overflow:auto;padding:2px 0 12px;scrollbar-width:thin}.chip{white-space:nowrap;padding:10px 14px;border-radius:999px;background:#fff;border:1px solid var(--line);color:#48564c;font-weight:700;font-size:12px}.chip.active{background:var(--green);color:#fff;border-color:var(--green)}
+.sectionhead{display:flex;align-items:end;justify-content:space-between;gap:12px;margin:18px 0 14px}.sectionhead h2{margin:0;font-size:22px}.sectionhead p{margin:4px 0 0;color:var(--muted);font-size:13px}.count{font-size:12px;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px}.product{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;transition:transform .15s,box-shadow .15s;min-width:0}.product:hover{transform:translateY(-3px);box-shadow:0 12px 28px #183a2010}.photo{aspect-ratio:1/1;background:#edf3ee;display:grid;place-items:center;overflow:hidden;position:relative}.photo img{width:100%;height:100%;object-fit:cover}.photo .placeholder{font-size:56px}.stock{position:absolute;left:10px;top:10px;background:#e1f6e6;color:#176a31;border-radius:999px;padding:5px 8px;font-size:10px;font-weight:800}.pbody{padding:13px;display:flex;flex-direction:column;flex:1}.category{color:var(--green);font-size:10px;font-weight:850;text-transform:uppercase;letter-spacing:.7px}.pbody h3{font-size:15px;margin:6px 0;line-height:1.3}.desc{font-size:12px;line-height:1.45;color:var(--muted);margin:0 0 12px;flex:1}.price{font-weight:900;font-size:20px;letter-spacing:-.5px;margin-bottom:11px}.pactions{display:flex;gap:7px}.pactions .btn{flex:1;padding:10px 8px;font-size:12px}
+.empty{grid-column:1/-1;background:white;border:1px dashed #cbd8ce;border-radius:18px;padding:36px 16px;text-align:center;color:var(--muted)}.empty strong{display:block;color:var(--ink);font-size:17px;margin-bottom:6px}
+.benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:28px 0}.benefit{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px;display:flex;gap:11px;align-items:center}.bicon{width:39px;height:39px;display:grid;place-items:center;border-radius:12px;background:#e7f7eb;font-size:19px}.benefit strong{font-size:13px;display:block}.benefit span{font-size:11px;color:var(--muted)}
+footer{background:#10251a;color:#dce9df;padding:28px 0;margin-top:35px}.foot{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;font-size:12px}.foot strong{color:#fff}.notice{font-size:11px;color:#a7bcad;max-width:600px;line-height:1.5}
+.modalback{position:fixed;inset:0;background:#07180dcc;z-index:20;display:none;align-items:center;justify-content:center;padding:14px}.modalback.show{display:flex}.modal{width:min(680px,100%);max-height:92vh;overflow:auto;background:#fff;border-radius:20px;padding:22px;box-shadow:0 24px 90px #0004}.modalhead{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:16px}.modalhead h2{font-size:20px;margin:0}.xbtn{background:#edf2ee;border-radius:10px;padding:8px 11px;font-weight:900}.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field{display:flex;flex-direction:column;gap:6px}.field.full{grid-column:1/-1}.field label{font-size:12px;font-weight:800}.field input,.field select,.field textarea{width:100%;border:1px solid #dce5de;border-radius:11px;padding:11px;background:#fff;outline-color:var(--green)}.field textarea{min-height:75px;resize:vertical}.modalnote{background:#fff6df;color:#775819;padding:11px 12px;border-radius:11px;font-size:12px;line-height:1.5;margin:12px 0}.adminlist{display:flex;flex-direction:column;gap:8px;margin-top:14px}.adminrow{display:flex;align-items:center;gap:10px;padding:9px;border:1px solid var(--line);border-radius:12px}.adminrow img,.adminthumb{width:48px;height:48px;object-fit:cover;border-radius:9px;background:#eef4ef;display:grid;place-items:center}.adminrow .grow{flex:1;min-width:0}.adminrow strong{display:block;font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.adminrow small{color:var(--muted);font-size:11px}.adminrow button{padding:8px;border-radius:8px;background:#eef5ef;font-size:11px;font-weight:800}.adminrow button.del{background:#fff0ef;color:#a32c25}.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#173b24;color:white;padding:12px 16px;border-radius:12px;z-index:40;display:none;max-width:90%;font-size:13px;box-shadow:0 8px 24px #0002}
+@media(max-width:850px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}.hero{grid-template-columns:1fr .45fr;padding:24px}.heroicon{font-size:76px}}
+@media(max-width:620px){.wrap{padding:0 13px}.topinner span:last-child{display:none}.head{min-height:68px}.brandname{font-size:15px}.tagline{font-size:10px}.logo{width:40px;height:40px}.headactions .btn{padding:10px;font-size:12px}.headactions .adminlabel{display:none}.hero{margin-top:15px;padding:23px 20px;grid-template-columns:1fr;min-height:0}.heroart{display:none}.hero h1{font-size:31px}.hero p{font-size:13px}.searchrow{margin-top:15px}.searchrow .btn{padding:10px}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.pbody{padding:10px}.pbody h3{font-size:14px}.price{font-size:18px}.pactions .btn{font-size:11px;padding:9px 5px}.benefits{grid-template-columns:1fr;gap:8px}.benefit{padding:12px}.sectionhead h2{font-size:20px}.formgrid{grid-template-columns:1fr}.field.full{grid-column:auto}.modal{padding:17px}.adminrow button{padding:8px 7px}}
+</style>
+</head>
+<body>
+<div class="topbar"><div class="wrap topinner"><span>🇨🇴 Atención en Villanueva, Casanare</span><span>Productos seleccionados · Atención cercana · Pedidos por WhatsApp</span></div></div>
+<header><div class="wrap head">
+  <div class="brand"><div class="logo">A</div><div><div class="brandname">VARIEDADES ARNELY</div><div class="tagline">Todo lo que buscas, en un solo lugar</div></div></div>
+  <div class="headactions"><button class="btn btn-light" id="whatsTop">☏ <span class="adminlabel">WhatsApp</span></button><button class="btn btn-outline" id="adminOpen">⚙ <span class="adminlabel">Administrar</span></button></div>
+</div></header>
+<main class="wrap">
+  <section class="hero"><div><div class="eyebrow">Catálogo digital</div><h1>Encuentra tus favoritos al mejor precio.</h1><p>Explora celulares, parlantes, accesorios y productos venezolanos. Elige lo que te gusta y haz tu pedido fácilmente por WhatsApp.</p></div><div class="heroart"><div class="heroicon">🛍️</div></div></section>
+  <div class="searchrow"><label class="searchbox"><span>⌕</span><input id="search" type="search" placeholder="¿Qué producto estás buscando?"></label><button class="btn btn-green" id="clearSearch">Buscar</button></div>
+  <nav class="categorybar" id="categories"></nav>
+  <div class="sectionhead"><div><h2 id="sectionTitle">Nuestros productos</h2><p>Precios en pesos colombianos (COP)</p></div><span class="count" id="count"></span></div>
+  <section class="grid" id="products"></section>
+  <section class="benefits">
+    <div class="benefit"><div class="bicon">📱</div><div><strong>Variedad para ti</strong><span>Encuentra lo que necesitas</span></div></div>
+    <div class="benefit"><div class="bicon">💬</div><div><strong>Pedido fácil por WhatsApp</strong><span>Consulta disponibilidad y compra</span></div></div>
+    <div class="benefit"><div class="bicon">🤝</div><div><strong>Atención personalizada</strong><span>Estamos para ayudarte</span></div></div>
+  </section>
+</main>
+<footer><div class="wrap foot"><div><strong>VARIEDADES ARNELY</strong><p>Tu tienda de confianza.</p><div class="notice">Los precios y la disponibilidad deben confirmarse al realizar el pedido. Las imágenes de muestra se pueden reemplazar por fotos reales de cada producto.</div></div><div>📍 Villanueva, Casanare<br><br>📲 WhatsApp: 317 458 3805</div></div></footer>
+<div class="modalback" id="adminModal"><div class="modal">
+  <div class="modalhead"><h2>Administrar catálogo</h2><button class="xbtn" id="closeAdmin">✕</button></div>
+  <div class="modalnote"><strong>Prototipo de demostración:</strong> los cambios se guardan únicamente en este navegador/dispositivo. El PIN de esta maqueta no protege los datos de forma segura. Antes de publicar para clientes, conecta autenticación y base de datos para sincronizar los productos en línea.</div>
+  <div class="formgrid">
+    <div class="field"><label for="pin">PIN de demostración</label><input id="pin" type="password" placeholder="PIN" inputmode="numeric"></div>
+    <div class="field" style="justify-content:end"><button class="btn btn-green" id="unlock">Desbloquear panel</button></div>
+  </div>
+  <div id="adminArea" style="display:none">
+    <hr style="border:0;border-top:1px solid var(--line);margin:18px 0">
+    <h3 id="formTitle" style="margin:0 0 12px">Agregar producto</h3>
+    <form id="productForm" class="formgrid">
+      <input type="hidden" id="editId">
+      <div class="field"><label for="pname">Nombre del producto *</label><input id="pname" required maxlength="90" placeholder="Ej. Samsung Galaxy A07"></div>
+      <div class="field"><label for="pcat">Categoría *</label><select id="pcat"><option>Celulares</option><option>Parlantes</option><option>Accesorios</option><option>Productos venezolanos</option></select></div>
+      <div class="field"><label for="pprice">Precio (COP) *</label><input id="pprice" type="number" min="0" step="1" required placeholder="Ej. 399000"></div>
+      <div class="field"><label for="pstock">Disponibilidad</label><select id="pstock"><option value="Disponible">Disponible</option><option value="Consultar disponibilidad">Consultar disponibilidad</option></select></div>
+      <div class="field full"><label for="pdesc">Descripción</label><textarea id="pdesc" maxlength="300" placeholder="Características, memoria, tamaño, potencia..."></textarea></div>
+      <div class="field full"><label for="pimage">Foto del producto</label><input id="pimage" type="file" accept="image/*"><small style="color:var(--muted)">Elige una foto de tu celular. En esta demo se guarda en este navegador.</small></div>
+      <div class="field full" style="display:flex;flex-direction:row;gap:8px;flex-wrap:wrap"><button class="btn btn-green" type="submit">Guardar producto</button><button class="btn btn-outline" type="button" id="cancelEdit">Limpiar formulario</button></div>
+    </form>
+    <h3 style="margin:22px 0 8px">Productos guardados</h3><div class="adminlist" id="adminList"></div>
+  </div>
+</div></div>
+<div class="toast" id="toast"></div>
+<script>
+const WA_NUMBER = "573174583805";
+const DEMO_PIN = "2580"; // Cambiar solo como barrera visual; no es autenticación segura.
+const SEED = [
+ {id:"s1",name:"Celular Android",category:"Celulares",price:0,desc:"Agrega el modelo, memoria y características del equipo.",stock:"Consultar disponibilidad",emoji:"📱"},
+ {id:"s2",name:"Parlante Bluetooth RGB",category:"Parlantes",price:0,desc:"Parlante portátil con luces RGB. Añade la potencia y características.",stock:"Consultar disponibilidad",emoji:"🔊"},
+ {id:"s3",name:"Accesorios para celular",category:"Accesorios",price:0,desc:"Cargadores, cables, audífonos, fundas y más.",stock:"Consultar disponibilidad",emoji:"🎧"},
+ {id:"s4",name:"Producto venezolano",category:"Productos venezolanos",price:0,desc:"Añade la marca, presentación y precio del producto.",stock:"Consultar disponibilidad",emoji:"🛒"}
+];
+let items = loadItems(), activeCategory = "Todos", query = "", unlocked = false;
+function loadItems(){try{const x=localStorage.getItem("arnelyCatalogV1");return x?JSON.parse(x):SEED.map(x=>({...x}));}catch(e){return SEED.map(x=>({...x}));}}
+function saveItems(){try{localStorage.setItem("arnelyCatalogV1",JSON.stringify(items));}catch(e){toast("No se pudo guardar. La foto puede ser demasiado grande; intenta una imagen más pequeña.");}}
+function money(n){return n>0?new Intl.NumberFormat("es-CO",{style:"currency",currency:"COP",maximumFractionDigits:0}).format(n):"Precio por actualizar";}
+function escapeHTML(s=""){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
+function imgMarkup(p){return p.image?`<img src="${p.image}" alt="${escapeHTML(p.name)}">`:`<div class="placeholder">${p.emoji||"📦"}</div>`;}
+function renderCategories(){let cats=["Todos","Celulares","Parlantes","Accesorios","Productos venezolanos"];document.getElementById("categories").innerHTML=cats.map(c=>`<button class="chip ${activeCategory===c?"active":""}" data-cat="${c}">${c==="Todos"?"✦ Todos":c}</button>`).join("");document.querySelectorAll("[data-cat]").forEach(b=>b.onclick=()=>{activeCategory=b.dataset.cat;render();});}
+function render(){
+ renderCategories();let shown=items.filter(p=>(activeCategory==="Todos"||p.category===activeCategory)&&(`${p.name} ${p.desc} ${p.category}`).toLowerCase().includes(query.toLowerCase()));
+ document.getElementById("count").textContent=`${shown.length} producto${shown.length===1?"":"s"}`;
+ document.getElementById("sectionTitle").textContent=activeCategory==="Todos"?"Nuestros productos":activeCategory;
+ const area=document.getElementById("products");
+ if(!shown.length){area.innerHTML='<div class="empty"><strong>No encontramos productos</strong>Prueba otra búsqueda o categoría.</div>';return;}
+ area.innerHTML=shown.map(p=>`<article class="product"><div class="photo">${imgMarkup(p)}<span class="stock">${escapeHTML(p.stock||"Disponible")}</span></div><div class="pbody"><span class="category">${escapeHTML(p.category)}</span><h3>${escapeHTML(p.name)}</h3><p class="desc">${escapeHTML(p.desc||"Consulta más detalles por WhatsApp.")}</p><div class="price">${money(Number(p.price)||0)}</div><div class="pactions"><button class="btn btn-green" data-order="${p.id}">Pedir por WhatsApp</button></div></div></article>`).join("");
+ document.querySelectorAll("[data-order]").forEach(b=>b.onclick=()=>orderItem(b.dataset.order));
+}
+function orderItem(id){const p=items.find(x=>x.id===id);if(!p)return;const msg=`Hola, Variedades Arnely. Estoy interesado/a en:\nProducto: ${p.name}\nPrecio publicado: ${money(Number(p.price)||0)}\n¿Me confirman disponibilidad, por favor?`;window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`,"_blank","noopener");}
+function toast(msg){const el=document.getElementById("toast");el.textContent=msg;el.style.display="block";clearTimeout(window.toastTimer);window.toastTimer=setTimeout(()=>el.style.display="none",3200);}
+document.getElementById("search").addEventListener("input",e=>{query=e.target.value;render();});
+document.getElementById("clearSearch").onclick=()=>{query=document.getElementById("search").value;render();};
+document.getElementById("whatsTop").onclick=()=>window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent("Hola, Variedades Arnely. Quisiera información sobre sus productos.")}`,"_blank","noopener");
+const modal=document.getElementById("adminModal");
+document.getElementById("adminOpen").onclick=()=>{modal.classList.add("show");document.getElementById("pin").value="";document.getElementById("adminArea").style.display=unlocked?"block":"none";};
+document.getElementById("closeAdmin").onclick=()=>modal.classList.remove("show");
+modal.addEventListener("click",e=>{if(e.target===modal)modal.classList.remove("show");});
+document.getElementById("unlock").onclick=()=>{if(document.getElementById("pin").value===DEMO_PIN){unlocked=true;document.getElementById("adminArea").style.display="block";renderAdmin();toast("Panel de demostración abierto.");}else toast("PIN incorrecto. Para esta demo, revisa las instrucciones del proyecto.");};
+function renderAdmin(){document.getElementById("adminList").innerHTML=items.map(p=>`<div class="adminrow">${p.image?`<img src="${p.image}" alt="">`:`<div class="adminthumb">${p.emoji||"📦"}</div>`}<div class="grow"><strong>${escapeHTML(p.name)}</strong><small>${escapeHTML(p.category)} · ${money(Number(p.price)||0)}</small></div><button data-edit="${p.id}">Editar</button><button class="del" data-delete="${p.id}">Eliminar</button></div>`).join("")||'<p style="color:var(--muted)">Todavía no hay productos.</p>';
+ document.querySelectorAll("[data-edit]").forEach(b=>b.onclick=()=>editProduct(b.dataset.edit));document.querySelectorAll("[data-delete]").forEach(b=>b.onclick=()=>deleteProduct(b.dataset.delete));}
+function resetForm(){document.getElementById("productForm").reset();document.getElementById("editId").value="";document.getElementById("formTitle").textContent="Agregar producto";pendingImage=null;}
+let pendingImage=null;
+document.getElementById("pimage").addEventListener("change",e=>{const f=e.target.files[0];if(!f)return;if(!f.type.startsWith("image/")){toast("El archivo debe ser una imagen.");return;}if(f.size>1.8*1024*1024){toast("Usa una foto menor de 1.8 MB para esta demo.");e.target.value="";return;}const reader=new FileReader();reader.onload=()=>pendingImage=reader.result;reader.readAsDataURL(f);});
+document.getElementById("productForm").onsubmit=e=>{e.preventDefault();const id=document.getElementById("editId").value||("p"+Date.now());const old=items.find(p=>p.id===id);const p={id,name:document.getElementById("pname").value.trim(),category:document.getElementById("pcat").value,price:Number(document.getElementById("pprice").value),desc:document.getElementById("pdesc").value.trim(),stock:document.getElementById("pstock").value,emoji:old?.emoji||"📦",image:pendingImage||old?.image||""};if(old)items=items.map(x=>x.id===id?p:x);else items.unshift(p);saveItems();resetForm();render();renderAdmin();toast("Producto guardado en este navegador.");};
+function editProduct(id){const p=items.find(x=>x.id===id);if(!p)return;document.getElementById("editId").value=p.id;document.getElementById("pname").value=p.name;document.getElementById("pcat").value=p.category;document.getElementById("pprice").value=p.price||"";document.getElementById("pdesc").value=p.desc||"";document.getElementById("pstock").value=p.stock||"Disponible";document.getElementById("formTitle").textContent="Editar producto";pendingImage=null;document.getElementById("productForm").scrollIntoView({behavior:"smooth",block:"start"});}
+function deleteProduct(id){const p=items.find(x=>x.id===id);if(!p||!confirm(`¿Eliminar "${p.name}" del catálogo de este navegador?`))return;items=items.filter(x=>x.id!==id);saveItems();render();renderAdmin();toast("Producto eliminado.");}
+document.getElementById("cancelEdit").onclick=resetForm;
+render();
+</script>
+</body>
+</html>
